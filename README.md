@@ -14,6 +14,6 @@ I made this game way before my knowledge of programming was at all developped, a
 
 I've also forgotten half the things I did to make the game work, so editing it to clean it up is a no-go. However, the game served its purpose as a learning project for me.
 
-There may be some minor bugs in the game (I'm aware of a bug concerning the hardest difficulty, but reaching that point is virtually impossible :)
+There may be some minor bugs in the game (I'm aware of a bug concerning the hardest difficulty, but reaching that point is virtually impossible).
 
 
