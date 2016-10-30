@@ -57,8 +57,8 @@ public class zelda {
     static int bombDir = 0;
     static boolean bombPurchased = false;
     static String wepEquip = "sword";
-    //Variable that controls monster speed, increases with progress.
-    static int tempo = 0;
+    //Variable that controls monster speed, decreases with progress (monster speed is inversely correlated to tempo).
+    static int tempo = 1000;
     //Rupee variables.
     static JLabel[] rupees = new JLabel[20]; //Max of 20 rupees on the field at once.
     static int rupeeCount = 0;
@@ -280,9 +280,8 @@ public class zelda {
                             JOptionPane.YES_NO_OPTION);
                     if (confirm == JOptionPane.YES_OPTION) {
                         cash -= 100;
-                        buyLife.setEnabled(false);
-                        lives++;
-                        JOptionPane.showMessageDialog (null, "Heart Container Purchased! \n" + "+1 Lives!");
+                        lives+=3;
+                        JOptionPane.showMessageDialog (null, "Heart Container Purchased! \n" + "+3 Lives!");
                     }
                 } else {
                     JOptionPane.showMessageDialog (null, "Not enough rupees!");
@@ -458,7 +457,7 @@ public class zelda {
             //Landing on coins.
             for (int j = 0; j < 20; j++) {
                 if (heroX == rupeeX[j] && heroY == rupeeY[j]) {
-                    int k = (int) (Math.random() * 5) + 1;
+                    int k = (int) (Math.random() * ((5000/tempo) * (5000/tempo))) + 5; //scales as game goes on
                     //Rupee disappears.
                     rupees[j].setBounds(1,1,0,0);
                     rupeeX[j] = 1;
