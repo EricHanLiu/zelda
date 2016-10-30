@@ -198,8 +198,7 @@ public class zelda {
                 } else if (tempo < 400) {
                     difficulty.setForeground(Color.red);
                     difficulty.setText("Difficulty: " + (1000 - tempo) + " (HARD)");
-                }
-                if (tempo == 100) {
+                } else if (tempo == 100) {
                     JOptionPane.showMessageDialog (null, "Congratulations! You've beat the game!");
                     int confirm = JOptionPane.showConfirmDialog(
                             null,
@@ -208,11 +207,13 @@ public class zelda {
                             JOptionPane.YES_NO_OPTION);
                     if (confirm == JOptionPane.YES_OPTION) {
                         tempo-=20;
+                        cash+=1000;
                     } else {
                         System.exit(0);
                     }
-                }
-
+                } else {
+                    difficulty.setForeground(Color.orange);
+                    difficulty.setText("Difficulty: " + (1000 - tempo) + " (INSANE)");
                 sleep(tempo);
 
                 statistics.setText("Kills: " + kills + " Rupees: " + cash);
