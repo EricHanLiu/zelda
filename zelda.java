@@ -208,6 +208,7 @@ public class zelda {
                             JOptionPane.YES_NO_OPTION);
                     if (confirm == JOptionPane.YES_OPTION) {
                         tempo-=20;
+                        difficulty.setText("Difficulty: " + (1000 - tempo) + " (INSANE)");
                     } else {
                         System.exit(0);
                     }
